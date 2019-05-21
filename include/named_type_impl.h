@@ -14,14 +14,21 @@
 template <typename T>
 using IsNotReference = typename std::enable_if<!std::is_reference<T>::value, void>::type;
 
+template <typename T>
+using IsDefaultConstructible = std::enable_if_t<std::is_default_constructible_v<T>>;
+
 
 template <typename T, typename Parameter, template<typename> class... Skills>
 class FLUENT_EBCO NamedType : public Skills<NamedType<T, Parameter, Skills...>>...
 {
 public:
 	using UnderlyingType = T;
+	using ParameterType = Parameter;
 
 	// constructor
+	template <typename = IsDefaultConstructible<T>>
+	constexpr NamedType() : value_() {}
+	
 	explicit constexpr NamedType(T const & value) : value_(value) {}
 
 	template <typename T_ = T, typename = IsNotReference<T_>>

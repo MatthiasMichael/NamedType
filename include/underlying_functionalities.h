@@ -4,6 +4,7 @@
 #include "named_type_impl.h"
 
 #include <functional>
+#include <iostream>
 #include <memory>
 
 
