@@ -162,7 +162,7 @@ namespace std
 		using checkIfHashable = typename std::enable_if<NamedType::is_hashable, void>::type;
 
 
-		size_t operator()(NamedType<T, Parameter, Skills...> const & x) const
+		size_t operator()(NamedType const & x) const
 		{
 			return std::hash<T>()(x.get());
 		}
