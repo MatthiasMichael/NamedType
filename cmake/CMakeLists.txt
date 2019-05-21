@@ -1,0 +1,12 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+
+PROJECT( NamedType )
+
+ADD_CUSTOM_TARGET( ${PROJECT_NAME} SOURCES 
+	../include/underlying_functionalities.h
+	../include/crtp.h
+	../include/named_type.h
+	../include/named_type_impl.h
+)
+
+SET_PROPERTY( TARGET ${PROJECT_NAME} PROPERTY FOLDER "Algorithms")
