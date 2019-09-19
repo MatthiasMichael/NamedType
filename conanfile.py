@@ -4,6 +4,8 @@ class NamedTypeConan(ConanFile):
     name = "NamedType"
     version = "1.0"
     exports_sources = "include/*"
+    settings = "os", "compiler", "build_type", "arch"
+    generators = "cmake"
 
     description = """"""
 
