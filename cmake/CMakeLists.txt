@@ -2,7 +2,6 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 
 PROJECT( NamedType )
 
-
 ADD_CUSTOM_TARGET( ${PROJECT_NAME} SOURCES 
 	../include/underlying_functionalities.h
 	../include/crtp.h
